@@ -23,7 +23,7 @@ This repo contains the final source code for free tutorial.
 Full explanation and task you can find in Polish: [CV HTML / CSS](https://www.flynerd.pl/2018/07/stworz-cv-w-html-i-css-krok-po-kroku.html)
 
 ## Demo
-Check demo here: [Ocat CV](https://ritaly.github.io/HTML-CSS-CV-demo/)
+Check demo here: [CV](https://vapoafe.github.io/)
 
 ## Credits
 Please feel free to copy any part of this repo for your own uses.
@@ -32,6 +32,4 @@ Please feel free to copy any part of this repo for your own uses.
 
 Thanks:
 
-- **Raleway** - set of free fonts thanks to Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida, Igino Marini
-
-- **Freepik** - title icon made by [Freepick](http://www.freepik.com), licensed: CC 3.0
+- **Roboto** - set of free fonts thanks to Christian Robertson
