@@ -8,7 +8,7 @@ body {
 }
 
 a {
-  color: #1C9C94;
+  color: #white;
   text-decoration: none;
 }
 
@@ -129,7 +129,7 @@ a .fab {
 }
 
 .school span, .job-title span {
-  color: #889499;
+  color: #8326d0;
   text-decoration: underline;
 }
 
