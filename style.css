@@ -32,7 +32,7 @@ header, main, footer {
 header {
   padding: 2em;
   text-align: center;
-  background-color: #8326d0;
+  background-color: #3e0070;
   background-size: cover;
   background-position: fixed;
   color: white;
@@ -92,7 +92,7 @@ a .fab {
 }
 
 .course .title {
-  color: #8326d0;
+  color: #3e0070;
   -ms-flex: 0 0 33.3%;
   flex: 0 0 33.3%;
   max-width: 33%;
@@ -121,7 +121,7 @@ a .fab {
 .skills .column ul > li:before {
   content: "►";
   padding-right: 0.5em;
-  color: #8326d0;
+  color: #3e0070;
 }
 
 .school, .job-title {
@@ -129,19 +129,19 @@ a .fab {
 }
 
 .school span, .job-title span {
-  color: #8326d0;
+  color: #3e0070;
   text-decoration: underline;
 }
 
 ul.job-description li:before{
   content: "✔";
   padding-right: 0.5em;
-  color: #8326d0;
+  color: #3e0070;
 }
 
 footer {
  padding: 1em 1.5em;
- background: #8326d0;
+ background: #3e0070;
  color: white;
  text-align: right;
 }
