@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Tinos');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 body {
   margin: 0;
-  font-family: 'Tinos';
+  font-family: 'Roboto';
   font-size: 16px;
   line-height: 1.8em;
 }
@@ -49,7 +49,6 @@ header img {
 }
 
 h1 {
-  text-transform: uppercase;
   margin: 1em 0;
 }
 
