@@ -92,7 +92,7 @@ a .fab {
 }
 
 .course .title {
-  color: #509e98;
+  color: #8326d0;
   -ms-flex: 0 0 33.3%;
   flex: 0 0 33.3%;
   max-width: 33%;
@@ -121,7 +121,7 @@ a .fab {
 .skills .column ul > li:before {
   content: "►";
   padding-right: 0.5em;
-  color: #509e98;
+  color: #8326d0;
 }
 
 .school, .job-title {
@@ -136,7 +136,7 @@ a .fab {
 ul.job-description li:before{
   content: "✔";
   padding-right: 0.5em;
-  color: #509e98;
+  color: #8326d0;
 }
 
 footer {
