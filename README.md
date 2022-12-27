@@ -26,10 +26,9 @@ Full explanation and task you can find in Polish: [CV HTML / CSS](https://www.fl
 Check demo here: [CV](https://vapoafe.github.io/)
 
 ## Credits
-Please feel free to copy any part of this repo for your own uses.
 
-**[Fly Nerd](https://www.flynerd.pl/)** - I will be happy if you mention **FlyNerd** as an inspiration.
+**[Fly Nerd](https://www.flynerd.pl/)** - as an inspiration.
 
 Thanks:
 
-- **Roboto** - set of free fonts thanks to Christian Robertson
+- **Roboto** - a set of free fonts thanks to Christian Robertson
