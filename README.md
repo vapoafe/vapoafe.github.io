@@ -23,7 +23,7 @@ This repo contains the final source code for free tutorial.
 Full explanation and task you can find in Polish: [CV HTML / CSS](https://www.flynerd.pl/2018/07/stworz-cv-w-html-i-css-krok-po-kroku.html)
 
 ## Demo
-Check demo here: [CV](https://ritaly.github.io/HTML-CSS-CV-demo/)
+Check demo here: [CV HTML / CSS](https://ritaly.github.io/HTML-CSS-CV-demo/)
 
 ## Credits
 
