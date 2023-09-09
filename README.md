@@ -31,4 +31,4 @@ Check demo here: [CV HTML / CSS](https://ritaly.github.io/HTML-CSS-CV-demo/)
 
 Thanks:
 
-- **Roboto** - a set of free fonts thanks to Christian Robertson
+**[Roboto](https://fonts.google.com/specimen/Roboto)** - a set of free fonts thanks to Christian Robertson
