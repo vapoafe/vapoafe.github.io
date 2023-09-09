@@ -16,6 +16,11 @@ a:hover {
   opacity: 0.5;
 }
 
+.custom-link {
+  color: #3e0070;
+  text-decoration: underline;
+}
+
 article {
   padding:0 1em;
 }
