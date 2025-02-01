@@ -14,7 +14,6 @@ body {
   top: 0;
   left: 0;
   z-index: -1; /* Ensure particles are in the background */
-  background-color: #ffffff;
 }
 
 a {
