@@ -28,6 +28,7 @@ Check demo here: [CV HTML / CSS](https://ritaly.github.io/HTML-CSS-CV-demo/)
 ## Credits
 
 **[Fly Nerd](https://www.flynerd.pl/)** - as an inspiration.
+**[Vincent Garreau](https://github.com/VincentGarreau)** - A lightweight JavaScript library for creating particles.
 
 Thanks:
 
