@@ -76,6 +76,7 @@ h3, h4 {
 
 main {
   max-width: 1140px;
+  background: #ffffff;
 }
 
 main section:not(:last-child) {
