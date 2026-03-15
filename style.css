@@ -17,7 +17,7 @@ body {
 }
 
 a {
-  color: #ff9800;
+  color: #FFC20A;
   text-decoration: none;
 }
 
@@ -26,7 +26,7 @@ a:hover {
 }
 
 .custom-link {
-  color: #3e0070;
+  color: #012169;
   text-decoration: underline;
 }
 
@@ -46,7 +46,7 @@ header, main, footer {
 header {
   padding: 2em;
   text-align: center;
-  background-color: #3e0070;
+  background-color: #012169;
   background-size: cover;
   background-position: fixed;
   color: white;
@@ -106,7 +106,7 @@ main section:not(:last-child) {
 }
 
 a .fab {
-  color: #ff9800;
+  color: #FFC20A;
 }
 
 .course, .skills {
@@ -117,7 +117,7 @@ a .fab {
 }
 
 .course .title {
-  color: #3e0070;
+  color: #012169;
   -ms-flex: 0 0 33.3%;
   flex: 0 0 33.3%;
   max-width: 33%;
@@ -146,7 +146,7 @@ a .fab {
 .skills .column ul > li:before {
   content: "►";
   padding-right: 0.5em;
-  color: #3e0070;
+  color: #012169;
 }
 
 .school, .job-title {
@@ -154,19 +154,19 @@ a .fab {
 }
 
 .school span, .job-title span {
-  color: #3e0070;
+  color: #012169;
   text-decoration: underline;
 }
 
 ul.job-description li:before{
   content: "✔";
   padding-right: 0.5em;
-  color: #3e0070;
+  color: #012169;
 }
 
 footer {
  padding: 1em 1.5em;
- background: #3e0070;
+ background: #012169;
  color: white;
  text-align: right;
 }
