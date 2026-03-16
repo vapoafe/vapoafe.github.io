@@ -109,6 +109,12 @@ a .fab {
   color: #FFC20A;
 }
 
+.two-column-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 20px;
+}
+
 .course, .skills {
   display: -ms-flexbox;
   display: flex;
