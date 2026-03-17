@@ -27,10 +27,8 @@ Check demo here: [CV HTML / CSS](https://ritaly.github.io/HTML-CSS-CV-demo/)
 
 ## Credits
 
-**[Fly Nerd](https://www.flynerd.pl/)** - as an inspiration.
+**[Fly Nerd](https://www.flynerd.pl/)** - Visual design and concept inspiration.
 
-**[Vincent Garreau](https://github.com/VincentGarreau)** - A lightweight JavaScript library for creating particles.
+**[Particles.js](https://github.com/VincentGarreau/particles.js)** by Vincent Garreau - A lightweight JavaScript library for creating particle effects.
 
-Thanks:
-
-**[Nunito](https://fonts.google.com/specimen/Nunito)** - a set of free fonts thanks to Vernon Adams
+**[Nunito](https://fonts.google.com/specimen/Nunito)** by Vernon Adams - A beautiful open-source sans-serif typeface family.
