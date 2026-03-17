@@ -120,6 +120,7 @@ a .fab {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .course .title {
