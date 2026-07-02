@@ -141,7 +141,7 @@ a .fab {
 }
 
 .skills .column {
-  -ms-flex: 0 0 50%%;
+  -ms-flex: 0 0 50%;
   flex: 0 0 50%;
   max-width: 50%;
 }
@@ -172,10 +172,10 @@ ul.job-description li:before{
 }
 
 footer {
- padding: 1em 1.5em;
- background: #012169;
- color: white;
- text-align: right;
+  padding: 1em 1.5em;
+  background: #012169;
+  color: white;
+  text-align: right;
 }
 
 @media only screen and (max-width: 768px) {
