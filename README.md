@@ -1,7 +1,7 @@
 <div align="center">
-<h1 align="center">A simple HTML CV</h1>
+<h1 align="center">My CV</h1>
 
-<img alt="Simple HTML CV" src="https://github.com/vapoafe/vapoafe.github.io/blob/master/img/resume_icon.png" />
+<img alt="Online CV" src="./img/cv.png" />
 
 </div>
 
