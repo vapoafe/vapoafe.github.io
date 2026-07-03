@@ -140,6 +140,13 @@ a .fab {
   padding-left: 1em;
 }
 
+.flag-icon {
+  width: 20px;
+  height: auto;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
 .skills .column {
   -ms-flex: 0 0 50%;
   flex: 0 0 50%;
