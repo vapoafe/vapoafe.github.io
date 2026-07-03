@@ -9,7 +9,7 @@
 
 **[CV Demo](https://github.com/ritaly/HTML-CSS-CV-demo)** by Rita Łyczywek - Initial visual design and concept inspiration.
 
-**[Icons]("https://www.flaticon.com/free-icons/curriculum-vitae)** by kerismaker - Flaticon Curriculum vitae icon.
+**[Icons](https://www.flaticon.com/free-icons/curriculum-vitae)** by kerismaker - Flaticon Curriculum vitae icon.
 
 **[Particles.js](https://github.com/VincentGarreau/particles.js)** by Vincent Garreau - A lightweight JavaScript library for creating particle effects.
 
