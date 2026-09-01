@@ -1,10 +1,39 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
+:root {
+  --bg-color: #f8fafc;
+  --main-bg: #ffffff;
+  --text-color: #333333;
+  --heading-color: #1e293b;
+  --header-bg: #012169;
+  --footer-bg: #012169;
+  --border-color: #cccccc;
+  --primary-accent: #012169;
+  --secondary-accent: #FFC20A;
+  --muted-text: #64748b;
+}
+
+body.dark-mode {
+  --bg-color: #080d1a;
+  --main-bg: #111a2e;
+  --text-color: #cbd5e1;
+  --heading-color: #f1f5f9;
+  --header-bg: #060e20;
+  --footer-bg: #060e20;
+  --border-color: #1e2d4a;
+  --primary-accent: #38bdf8;
+  --secondary-accent: #fbbf24;
+  --muted-text: #94a3b8;
+}
+
 body {
   margin: 0;
   font-family: 'Nunito', sans-serif;
   font-size: 16px;
   line-height: 1.8em;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #particles-js {
@@ -13,43 +42,113 @@ body {
   height: 100%;
   top: 0;
   left: 0;
-  z-index: -1;  /*Ensure particles are in the background */
+  z-index: -1;  /* Ensure particles are in the background */
+}
+
+/* Floating / Fixed Theme Toggle Button */
+.theme-toggle-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.theme-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(1, 33, 105, 0.85);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.theme-toggle-btn:hover {
+  background: #012169;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  border-color: #FFC20A;
+}
+
+.theme-toggle-btn:focus-visible {
+  outline: 2px solid #FFC20A;
+  outline-offset: 2px;
+}
+
+.theme-toggle-btn i {
+  font-size: 16px;
+  color: #FFC20A;
+  border: none;
+  width: auto;
+  height: auto;
+  line-height: normal;
+  margin: 0;
+}
+
+body.dark-mode .theme-toggle-btn {
+  background: rgba(17, 26, 46, 0.9);
+  color: #f1f5f9;
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .theme-toggle-btn:hover {
+  background: #18233c;
+  border-color: #fbbf24;
+}
+
+body.dark-mode .theme-toggle-btn i {
+  color: #fbbf24;
 }
 
 a {
-  color: #FFC20A;
-  text-decoration: underline;
+  color: var(--secondary-accent);
+  text-decoration: none;
+  transition: opacity 0.2s ease, color 0.2s ease;
 }
 
 a:hover {
-  opacity: 0.5;
+  opacity: 0.75;
 }
 
 .custom-link {
-  color: #012169;
+  color: var(--primary-accent);
   text-decoration: underline;
 }
 
 article {
-  padding:0 1em;
+  padding: 0 1em;
 }
 
-section{
+section {
   margin: 1em;
   padding: 1em;
 }
 
 header, main, footer {
   margin: 0 auto;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 header {
   padding: 2em;
   text-align: center;
-  background-color: #012169;
+  background-color: var(--header-bg);
   background-size: cover;
   background-position: fixed;
   color: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
 header section {
@@ -60,58 +159,56 @@ header section {
 header img {
   border-radius: 50%;
   max-width: 150px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  transition: border-color 0.3s ease;
+}
+
+body.dark-mode header img {
+  border-color: rgba(56, 189, 248, 0.4);
 }
 
 h1 {
   margin: 1em 0;
+  color: #ffffff;
+}
+
+h2 {
+  color: var(--heading-color);
+  font-weight: 700;
+  transition: color 0.3s ease;
+  text-decoration: underline;
+  border-bottom-width: 2px;
 }
 
 h3 {
   text-transform: uppercase;
+  color: var(--heading-color);
 }
 
 h3, h4 {
   font-weight: bold;
+  color: var(--heading-color);
 }
 
 main {
   max-width: 1140px;
-  background: #ffffff;
+  background: var(--main-bg);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.06);
+  border-radius: 4px;
+}
+
+body.dark-mode main {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 main section:not(:last-child) {
-  border-bottom: 1px solid #ccc;
-}
-
-.fab {
-  border: 1px solid white;
-  border-radius: 50%;
-  font-size: 1.5em;
-  width: 1.5em;
-  height: 1.5em;
-  line-height: 1.5em;
-  margin: 5px;
-  text-align: center;
-}
-
-.fas {
-  border: 1px solid white;
-  border-radius: 50%;
-  font-size: 1.5em;
-  width: 1.5em;
-  height: 1.5em;
-  line-height: 1.5em;
-  margin: 5px;
-  text-align: center;
-}
-
-a .fab {
-  color: #FFC20A;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .two-column-list {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
 
@@ -124,7 +221,7 @@ a .fab {
 }
 
 .course .title {
-  color: #012169;
+  color: var(--primary-accent);
   -ms-flex: 0 0 33.3%;
   flex: 0 0 33.3%;
   max-width: 33%;
@@ -140,11 +237,40 @@ a .fab {
   padding-left: 1em;
 }
 
+.github-icon,
+.orcid-icon {
+  width: 38px;
+  height: auto;
+  text-decoration: none;
+}
+
+.theme-icon-img {
+  width: 25px;
+  height: 25px;
+}
+
+/* Default state: Hide sun, show moon */
+#sun-icon {
+  display: none;
+}
+#moon-icon {
+  display: inline-block;
+}
+
+/* Dark mode state: Hide moon, show sun */
+body.dark-mode #moon-icon {
+  display: none;
+}
+body.dark-mode #sun-icon {
+  display: inline-block;
+}
+
 .flag-icon {
   width: 20px;
   height: auto;
   vertical-align: middle;
   margin-right: 5px;
+  border-radius: 2px;
 }
 
 .skills .column {
@@ -155,12 +281,13 @@ a .fab {
 
 .skills .column ul, ul.job-description {
   list-style-type: none;
+  padding-left: 1em;
 }
 
 .skills .column ul > li:before {
   content: "►";
   padding-right: 0.5em;
-  color: #012169;
+  color: var(--primary-accent);
 }
 
 .school, .job-title {
@@ -168,21 +295,17 @@ a .fab {
 }
 
 .school span, .job-title span {
-  color: #012169;
-  text-decoration: underline;
-}
-
-ul.job-description li:before{
-  content: "✔";
-  padding-right: 0.5em;
-  color: #012169;
+  color: var(--primary-accent);
+  
+  font-weight: 600;
 }
 
 footer {
   padding: 1em 1.5em;
-  background: #012169;
+  background: var(--footer-bg);
   color: white;
   text-align: right;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 @media only screen and (max-width: 768px) {
@@ -192,6 +315,16 @@ footer {
 
   .course .title, .course .descrition {
     max-width: 100%;
+  }
+
+  .theme-toggle-container {
+    top: 12px;
+    right: 12px;
+  }
+
+  .theme-toggle-btn {
+    padding: 6px 12px;
+    font-size: 13px;
   }
 }
 

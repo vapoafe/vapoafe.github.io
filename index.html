@@ -2,21 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Apostolidis-Afentoulis Vasileios CV</title>
-  <meta name="description" content="simple CV example created with HTML and CSS">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vasileios Apostolidis-Afentoulis CV</title>
+  <meta name="description" content="Academic and professional CV of Vasileios Apostolidis-Afentoulis">
   <meta name="author" content="Vasileios Apostolidis-Afentoulis">
+  <meta property="og:title" content="Vasileios Apostolidis-Afentoulis CV" />
+  <meta property="og:description" content="Academic and professional CV of Vasileios Apostolidis-Afentoulis" />
+  <meta property="og:type" content="website" />
   <link rel="icon" href="./img/favicon.ico?v=2">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
 </head>
 
 <body>
 
   <div id="particles-js"></div>
   
+  <!-- Dark / Light Mode Toggle Button -->
+  <div class="theme-toggle-container">
+    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Switch to dark mode" title="Toggle Light/Dark mode">
+      <img src="./img/moon.svg" alt="moon icon" id="moon-icon" class="theme-icon-img">
+      <img src="./img/sun.svg" alt="sun icon" id="sun-icon" class="theme-icon-img">
+      <span id="theme-text">Dark</span>
+    </button>
+  </div>
+
   <header>
     <div>
       <img src="./img/avatar.jpeg" alt="Vasileios Apostolidis-Afentoulis profile photo" />
@@ -24,21 +36,22 @@
     <h1>Vasileios Apostolidis-Afentoulis CV</h1>
     <section>
       <p>I am Vasileios Apostolidis-Afentoulis, an independent researcher and vocational high school teacher specializing in electronics engineering.</p>
-      <a href="https://github.com/vapoafe" target="_blank" aria-label="GitHub profile">
-        <i class="fab fa-github"></i>
+      <a href="https://github.com/vapoafe" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+        <img src="./img/github.svg" alt="Github icon" class="github-icon" style="margin-right: 12px;">
       </a>
-      <a href="https://orcid.org/0000-0002-4147-7011" target="_blank" aria-label="ORCID profile">
-        <i class="fas fa-graduation-cap"></i>
+      <a href="https://orcid.org/0000-0002-4147-7011" target="_blank" rel="noopener noreferrer" aria-label="ORCID profile">
+        <img src="./img/orcid.svg" alt="ORCID icon" class="orcid-icon">
       </a>
     </section>
   </header>
+
   <main>
     <section>
       <h2>Skills</h2>
-        <div class='skills'>
-        <div class='column'>
+      <div class="skills">
+        <div class="column">
           <h4>Experience with</h4>
-          <div class='two-column-list'>
+          <div class="two-column-list">
             <ul>
               <li>C</li>
               <li>C#</li>
@@ -65,134 +78,151 @@
         </div>
         <div class="column">
           <h4>Languages</h4>
-          <p> <img src="./img/gr.svg" alt="Greece Flag" class="flag-icon"> Greek - Native speaker C2</p>
-          <p> <img src="./img/us.svg" alt="United States Flag" class="flag-icon"> English - Proficient C2</p>
+          <p><img src="./img/gr.svg" alt="Greece Flag" class="flag-icon"> Greek - Native speaker C2</p>
+          <p><img src="./img/us.svg" alt="United States Flag" class="flag-icon"> English - Proficient C2</p>
         </div>
       </div>
-
     </section>
 
     <section>
       <h2>Education</h2>
       <article>
-        <div class='school'> <span>2025 - 2029</span> - <strong>Hellenic Open University - Department of Computer Science</strong>
-        </div>
+        <div class="school"><span>2025 - 2029</span> - <strong>Hellenic Open University - Department of Computer Science</strong></div>
         <div class="descrition">
           Bachelor of Science in Informatics (In progress)
         </div>
       </article>
       <br>
       <article>
-        <div class='school'> <span>2021 - 2023</span> - <strong>University of Macedonia - Department of Educational & Social Policy</strong>
-        </div>
+        <div class="school"><span>2021 - 2023</span> - <strong>University of Macedonia - Department of Educational & Social Policy</strong></div>
         <div class="descrition">
           Master of Education in Educational Sciences: Information and Communications Technology (ICT) Implementation in Education and Lifelong Learning
         </div>
       </article>
       <br>
       <article>
-        <div class='school'>
-          <span>2014 - 2016</span> - <strong>International Hellenic University - Department of Information and Electronic Engineering</strong>
-        </div>
+        <div class="school"><span>2014 - 2016</span> - <strong>International Hellenic University - Department of Information and Electronic Engineering</strong></div>
         <div class="descrition">
           Master of Science in Web Intelligence
         </div>
       </article>
       <br>
       <article>
-        <div class='school'>
-          <span>2008 - 2014</span> - <strong>International Hellenic University - Department of Information and Electronic Engineering</strong>
-        </div>
-        <div>
+        <div class="school"><span>2008 - 2014</span> - <strong>International Hellenic University - Department of Information and Electronic Engineering</strong></div>
+        <div class="descrition">
           Bachelor of Science in Electronic Engineering
         </div>
       </article>
     </section>
+
     <section>
       <h2>Experience</h2>
       <article>
-        <div class='job-title'>
-          <span>11.2025 - 06.2026</span> - <strong>1st Vocational High School of Kalamaria</strong><br> <strong>Position:</strong> Electronics Engineering Vocational High School Teacher
+        <div class="job-title">
+          <span>11.2025 - 06.2026</span> - <strong>1st Vocational High School of Kalamaria</strong><br>
+          <strong>Position:</strong> Electronics Engineering Vocational High School Teacher
         </div>
         <br>
-        <div class='job-title'>
-          <span>09.2020 - 11.2025</span> - <strong>University of Macedonia - Department of Applied Informatics</strong><br> Computational Methodologies & Operations Research Laboratory (CMOR Lab) <br> <strong>Position:</strong> Researcher
+        <div class="job-title">
+          <span>09.2020 - 11.2025</span> - <strong>University of Macedonia - Department of Applied Informatics</strong><br>
+          Computational Methodologies & Operations Research Laboratory (CMOR Lab) <br>
+          <strong>Position:</strong> Researcher
         </div>
         <br>
-        <div class='job-title'>
-          <span>12.2022 - 01.2023</span> - <strong>University of Macedonia - Department of Educational & Social Policy</strong><br> Autism Inclusion in Distance Learning - ASD‑IncluDi, Erasmus+ Programme <br> <strong>Position:</strong> Utilization of ICT and IoT Technologies in Education
+        <div class="job-title">
+          <span>12.2022 - 01.2023</span> - <strong>University of Macedonia - Department of Educational & Social Policy</strong><br>
+          Autism Inclusion in Distance Learning - ASD‑IncluDi, Erasmus+ Programme <br>
+          <strong>Position:</strong> Utilization of ICT and IoT Technologies in Education
         </div>
         <br>
-        <div class='job-title'>
-          <span>04.2018 - 04.2018</span> - <strong>University of Macedonia - Department of Applied Informatics</strong><br> Shaping Smarter Consumer Behaviour and Food Choice ‑ FOODSMART, Horizon 2020 Marie Sklodowska‑Curie Research and Innovation Staff Exchange <br> <strong>Position:</strong> Developer of the FOODSMART application
+        <div class="job-title">
+          <span>04.2018 - 04.2018</span> - <strong>University of Macedonia - Department of Applied Informatics</strong><br>
+          Shaping Smarter Consumer Behaviour and Food Choice ‑ FOODSMART, Horizon 2020 Marie Sklodowska‑Curie Research and Innovation Staff Exchange <br>
+          <strong>Position:</strong> Developer of the FOODSMART application
         </div>
         <br>
-        <div class='job-title'>
-          <span>07.2017 - 08.2017</span> - <strong>University of Macedonia - Department of Applied Informatics</strong><br> Shaping Smarter Consumer Behaviour and Food Choice ‑ FOODSMART, Horizon 2020 Marie Sklodowska‑Curie Research and Innovation Staff Exchange <br> <strong>Position:</strong> Developer of the FOODSMART application
+        <div class="job-title">
+          <span>07.2017 - 08.2017</span> - <strong>University of Macedonia - Department of Applied Informatics</strong><br>
+          Shaping Smarter Consumer Behaviour and Food Choice ‑ FOODSMART, Horizon 2020 Marie Sklodowska‑Curie Research and Innovation Staff Exchange <br>
+          <strong>Position:</strong> Developer of the FOODSMART application
         </div>
         <br>
-        <div class='job-title'>
-          <span>01.2017 - 05.2020</span> - <strong>University of Macedonia - Department of Applied Informatics</strong><br> Multimedia, Security and Networking Laboratory (MSN Lab) <br> <strong>Position:</strong> Researcher
+        <div class="job-title">
+          <span>01.2017 - 05.2020</span> - <strong>University of Macedonia - Department of Applied Informatics</strong><br>
+          Multimedia, Security and Networking Laboratory (MSN Lab) <br>
+          <strong>Position:</strong> Researcher
         </div>
         <br>
-        <div class='job-title'>
-          <span>08.2016 - 05.2020</span> - <strong>Evernote Corporation</strong><br> <strong>Position:</strong> Evernote Community Leader (Intern)
+        <div class="job-title">
+          <span>08.2016 - 05.2020</span> - <strong>Evernote Corporation</strong><br>
+          <strong>Position:</strong> Evernote Community Leader (Intern)
         </div>
         <br>
-        <div class='job-title'>
-          <span>03.2013 - 09.2013</span> - <strong>International Hellenic University - Department of Library, Archival & Information Studies</strong><br> <strong>Position:</strong> Computer Network Manager (Intern)
+        <div class="job-title">
+          <span>03.2013 - 09.2013</span> - <strong>International Hellenic University - Department of Library, Archival & Information Studies</strong><br>
+          <strong>Position:</strong> Computer Network Manager (Intern)
         </div>
       </article>
     </section>
+
     <section>
       <h2>Publications</h2>
       <article>
-        <div class='job-title'>
-          <span>04.2026</span> - <strong>Independent Researcher - Petmeza Language School - Primary School of Limenaria</strong><br> <b>Apostolidis-Afentoulis, V.</b> Sfatou, S., and Vekopoulou, D. (2026). ICT Tools in Greek Education: Teacher's Opinions and Expectations. Zenodo, pages 1-17. <a href="https://doi.org/10.5281/zenodo.19606415" class="custom-link">DOI: 10.5281/zenodo.19606415</a>
+        <div class="job-title">
+          <span>04.2026</span> - <strong>Independent Researcher - Petmeza Language School - Primary School of Limenaria</strong><br>
+          <b>Apostolidis-Afentoulis, V.</b> Sfatou, S., and Vekopoulou, D. (2026). ICT Tools in Greek Education: Teacher's Opinions and Expectations. Zenodo, pages 1-17. <a href="https://doi.org/10.5281/zenodo.19606415" class="custom-link" target="_blank" rel="noopener noreferrer">DOI: 10.5281/zenodo.19606415</a>
         </div>
       </article>
       <br>
       <article>
-        <div class='job-title'>
-          <span>09.2025</span> - <strong>University of Macedonia ‑ Department of Applied Informatics</strong><br> Papadopoulos, I.I., Liaskopoulou, A., <b>Apostolidis-Afentoulis, V.</b> and Mamalis G. (2025). Sustainable Tourism in Greece: The Rising Demand for Green Hotels. In Global Challenges and Uncertainty in Tourism and Hospitality, Volume II: Marketing Advancements and Value Creation, pages 167-192. Springer Nature, <a href="https://doi.org/10.1007/978-3-031-92409-5_7" class="custom-link">DOI: 10.1007/978-3-031-92409-5_7</a>
+        <div class="job-title">
+          <span>09.2025</span> - <strong>University of Macedonia ‑ Department of Applied Informatics</strong><br>
+          Papadopoulos, I.I., Liaskopoulou, A., <b>Apostolidis-Afentoulis, V.</b> and Mamalis G. (2025). Sustainable Tourism in Greece: The Rising Demand for Green Hotels. In Global Challenges and Uncertainty in Tourism and Hospitality, Volume II: Marketing Advancements and Value Creation, pages 167-192. Springer Nature, <a href="https://doi.org/10.1007/978-3-031-92409-5_7" class="custom-link" target="_blank" rel="noopener noreferrer">DOI: 10.1007/978-3-031-92409-5_7</a>
         </div>
       </article>
       <br>
       <article>
-        <div class='job-title'>
-          <span>06.2025</span> - <strong>University of Macedonia ‑ Department of Applied Informatics</strong><br> <b>Apostolidis-Afentoulis, V.</b> (2025). ABMQuest: Integrating Gamification and Agent-Based Modelling in a Unified Simulation Framework. In Applications of Modelling and Simulation, 9, pages 251–263, <a href="https://arqiipubl.com/ojs/index.php/AMS_Journal/article/view/950" class="custom-link">eISSN: 2600-8084</a>
+        <div class="job-title">
+          <span>06.2025</span> - <strong>University of Macedonia ‑ Department of Applied Informatics</strong><br>
+          <b>Apostolidis-Afentoulis, V.</b> (2025). ABMQuest: Integrating Gamification and Agent-Based Modelling in a Unified Simulation Framework. In Applications of Modelling and Simulation, 9, pages 251–263, <a href="https://arqiipubl.com/ojs/index.php/AMS_Journal/article/view/950" class="custom-link" target="_blank" rel="noopener noreferrer">eISSN: 2600-8084</a>
         </div>
       </article>
       <br>
       <article>
-        <div class='job-title'>
-          <span>02.2025</span> - <strong>University of Macedonia ‑ Department of Applied Informatics</strong><br> <b>Apostolidis-Afentoulis, V.</b> (2025). "Active Neighbour": A Novel Monitoring Model for Cyber-Physical Systems. In arXiv preprint - Electrical Engineering and Systems Science, <a href="https://doi.org/10.48550/arXiv.2502.08742" class="custom-link">DOI: 10.48550/arXiv.2502.08742</a>
+        <div class="job-title">
+          <span>02.2025</span> - <strong>University of Macedonia ‑ Department of Applied Informatics</strong><br>
+          <b>Apostolidis-Afentoulis, V.</b> (2025). "Active Neighbour": A Novel Monitoring Model for Cyber-Physical Systems. In arXiv preprint - Electrical Engineering and Systems Science, <a href="https://doi.org/10.48550/arXiv.2502.08742" class="custom-link" target="_blank" rel="noopener noreferrer">DOI: 10.48550/arXiv.2502.08742</a>
         </div>
       </article>
       <br>
       <article>
-        <div class='job-title'>
-          <span>09.2024</span> - <strong>University of Thessaly & University of Macedonia ‑ Department of Applied Informatics</strong><br> Liaskopoulou, A., Papadopoulos, I. and <b>Apostolidis-Afentoulis, V.</b> (2024). Green Environmental Policy Transition for Green Development in Greece: Understanding Citizens' Perceptions. In Proceedings of the 16th Annual Conference of the EuroMed Academy of Business - Business Transformation in Uncertain Global Environments, ISBN 978-9963-711-98-7, ISSN 2547-8516, EuroMed Press, pages 404-418, <a href="https://doi.org/10.5281/zenodo.19040373" class="custom-link">DOI: 10.5281/zenodo.19040373</a>.
+        <div class="job-title">
+          <span>09.2024</span> - <strong>University of Thessaly & University of Macedonia ‑ Department of Applied Informatics</strong><br>
+          Liaskopoulou, A., Papadopoulos, I. and <b>Apostolidis-Afentoulis, V.</b> (2024). Green Environmental Policy Transition for Green Development in Greece: Understanding Citizens' Perceptions. In Proceedings of the 16th Annual Conference of the EuroMed Academy of Business - Business Transformation in Uncertain Global Environments, ISBN 978-9963-711-98-7, ISSN 2547-8516, EuroMed Press, pages 404-418, <a href="https://doi.org/10.5281/zenodo.19040373" class="custom-link" target="_blank" rel="noopener noreferrer">DOI: 10.5281/zenodo.19040373</a>.
         </div>
       </article>
       <br>
       <article>
-        <div class='job-title'>
-          <span>03.2023</span> - <strong>University of Macedonia ‑ Department of Applied Informatics</strong><br> <b>Apostolidis-Afentoulis, V.</b> and Sakellariou, I. (2023). Teleo-Reactive Agents in a Simulation Platform. In Proceedings of the 15th International Conference on Agents and Artificial Intelligence - Volume 1: ICAART, ISBN 978-989-758-623-1; ISSN 2184-433X, SciTePress, pages 26-36. <a href="https://doi.org/10.5220/0011635300003393" class="custom-link">DOI: 10.5220/0011635300003393</a>
+        <div class="job-title">
+          <span>03.2023</span> - <strong>University of Macedonia ‑ Department of Applied Informatics</strong><br>
+          <b>Apostolidis-Afentoulis, V.</b> and Sakellariou, I. (2023). Teleo-Reactive Agents in a Simulation Platform. In Proceedings of the 15th International Conference on Agents and Artificial Intelligence - Volume 1: ICAART, ISBN 978-989-758-623-1; ISSN 2184-433X, SciTePress, pages 26-36. <a href="https://doi.org/10.5220/0011635300003393" class="custom-link" target="_blank" rel="noopener noreferrer">DOI: 10.5220/0011635300003393</a>
         </div>
       </article>
       <br>
       <article>
-        <div class='job-title'>
-          <span>06.2015</span> - <strong>International Hellenic University - Department of Information and Electronic Engineering</strong><br> <b>Apostolidis-Afentoulis, V.</b> and Lioufi, K-I. (2015). SVM Classification with Linear and RBF kernels. <a href="http://rgdoi.net/10.13140/RG.2.1.3351.4083" class="custom-link">DOI: 10.13140/RG.2.1.3351.4083</a>
+        <div class="job-title">
+          <span>06.2015</span> - <strong>International Hellenic University - Department of Information and Electronic Engineering</strong><br>
+          <b>Apostolidis-Afentoulis, V.</b> and Lioufi, K-I. (2015). SVM Classification with Linear and RBF kernels. <a href="http://rgdoi.net/10.13140/RG.2.1.3351.4083" class="custom-link" target="_blank" rel="noopener noreferrer">DOI: 10.13140/RG.2.1.3351.4083</a>
         </div>
       </article>
     </section>
   </main>
+
   <footer>
-    <p>Created by: <a href="https://github.com/ritaly" aria-label="Visit ritaly's website who is the creator of this template">@ritaly </a>  / Customized by: <a href="https://github.com/vapoafe" aria-label="Visit vapoafe's website who customized the original template"> @vapoafe</a> / 2018 - Present </p>
+    <p>Created by: <a href="https://github.com/ritaly" target="_blank" rel="noopener noreferrer" aria-label="Visit ritaly's website who is the creator of this template">@ritaly</a> / Customized by: <a href="https://github.com/vapoafe" target="_blank" rel="noopener noreferrer" aria-label="Visit vapoafe's website who customized the original template">@vapoafe</a> / 2018 - Present</p>
   </footer>
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+  <script src="circuit-particles.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
