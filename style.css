@@ -1,4 +1,60 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+/* =========================================================
+    Nunito Font Definition
+   ========================================================= */
+
+/* ExtraLight 200 */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url('./fonts/Nunito-ExtraLight.ttf') format('truetype');
+}
+
+/* Light 300 */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('./fonts/Nunito-Light.ttf') format('truetype');
+}
+
+/* Regular - 400 */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./fonts/Nunito-Regular.ttf') format('truetype');
+}
+
+/* Semi-Bold - 600 */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('./fonts/Nunito-SemiBold.ttf') format('truetype');
+}
+
+/* Bold - 700 */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('./fonts/Nunito-Bold.ttf') format('truetype');
+}
+
+/* Italic - 400 */
+@font-face {
+  font-family: 'Nunito';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./fonts/Nunito-Italic.ttf') format('truetype');
+}
 
 :root {
   --bg-color: #f8fafc;
@@ -29,6 +85,7 @@ body.dark-mode {
 body {
   margin: 0;
   font-family: 'Nunito', sans-serif;
+  font-weight: 400;
   font-size: 16px;
   line-height: 1.8em;
   background-color: var(--bg-color);
@@ -171,6 +228,7 @@ body.dark-mode header img {
 h1 {
   margin: 1em 0;
   color: #ffffff;
+  font-weight: 700;
 }
 
 h2 {
@@ -187,7 +245,7 @@ h3 {
 }
 
 h3, h4 {
-  font-weight: bold;
+  font-weight: 700;
   color: var(--heading-color);
 }
 
@@ -296,8 +354,7 @@ body.dark-mode #sun-icon {
 
 .school span, .job-title span {
   color: var(--primary-accent);
-  
-  font-weight: 600;
+  font-weight: 700;
 }
 
 footer {

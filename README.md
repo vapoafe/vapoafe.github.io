@@ -11,4 +11,4 @@
 
 **[Icons](https://www.flaticon.com/free-icons/curriculum-vitae)** by kerismaker - Flaticon Curriculum vitae icon.
 
-**[Font](https://fonts.google.com/specimen/Nunito)** by Vernon Adams - Nunito a beautiful open-source sans-serif typeface family.
+**[Font](https://fonts.google.com/specimen/Nunito)** by Vernon Adams and Jacques Le Bailly - Nunito a beautiful open-source sans-serif typeface family.
