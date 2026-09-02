@@ -8,7 +8,7 @@ var circuitInstance = null;
 var lightConfig = {
   particles: {
     number: {
-      value: 60,
+      value: 10,
       density: { enable: true, value_area: 900 }
     },
     color: {
@@ -30,7 +30,7 @@ var lightConfig = {
     },
     move: {
       enable: true,
-      speed: 0.6,
+      speed: 0.2,
       direction: "none",
       random: true,
       straight: false,
@@ -70,8 +70,8 @@ var lightConfig = {
   interactivity: {
     detect_on: "window",
     events: {
-      onhover: { enable: true, mode: "probe" },
-      onclick: { enable: true, mode: "pulse-burst" },
+      onhover: { enable: true, mode: "breaker" },
+      onclick: { enable: true, mode: "pulse_burst" },
       resize: true
     },
     modes: {
@@ -85,8 +85,8 @@ var lightConfig = {
   },
   background: {
     color: "#f8fafc",
-    grid: { enable: true, type: "dots", size: 30, opacity: 0.18, color: "#012169" },
-    pcbMarks: { enable: true, labels: true, opacity: 0.25 }
+    grid: { enable: true, type: "dots", size: 30, opacity: 0.3, color: "#012169" },
+    pcbMarks: { enable: true, labels: true, opacity: 0.3 }
   },
   retina_detect: true,
   fps_limit: 60
@@ -95,7 +95,7 @@ var lightConfig = {
 var darkConfig = {
   particles: {
     number: {
-      value: 60,
+      value: 10,
       density: { enable: true, value_area: 900 }
     },
     color: {
@@ -117,7 +117,7 @@ var darkConfig = {
     },
     move: {
       enable: true,
-      speed: 0.6,
+      speed: 0.2,
       direction: "none",
       random: true,
       straight: false,
@@ -128,8 +128,8 @@ var darkConfig = {
     enable: true,
     distance: 140,
     color: "#38bdf8",
-    opacity: 0.35,
-    width: 1.5,
+    opacity: 0.45,
+    width: 1.6,
     style: "chamfer45",
     chamferSize: 12,
     maxConnections: 3
@@ -158,7 +158,7 @@ var darkConfig = {
     detect_on: "window",
     events: {
       onhover: { enable: true, mode: "probe" },
-      onclick: { enable: true, mode: "pulse-burst" },
+      onclick: { enable: true, mode: "pulse_burst" },
       resize: true
     },
     modes: {
@@ -172,8 +172,8 @@ var darkConfig = {
   },
   background: {
     color: "#080d1a",
-    grid: { enable: true, type: "dots", size: 30, opacity: 0.12, color: "#38bdf8" },
-    pcbMarks: { enable: true, labels: true, opacity: 0.2 }
+    grid: { enable: true, type: "dots", size: 30, opacity: 0.3, color: "#38bdf8" },
+    pcbMarks: { enable: true, labels: true, opacity: 0.3 }
   },
   retina_detect: true,
   fps_limit: 60
@@ -232,5 +232,13 @@ document.addEventListener("DOMContentLoaded", function () {
   var toggleBtn = document.getElementById("theme-toggle");
   if (toggleBtn) {
     toggleBtn.addEventListener("click", toggleTheme);
+  }
+});
+
+document.addEventListener("visibilitychange", function() {
+  if (document.hidden) {
+    circuitInstance.isPlaying = false;
+  } else {
+    circuitInstance.isPlaying = true;
   }
 });

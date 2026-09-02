@@ -28,7 +28,16 @@
 
   <header>
     <div>
-      <img src="./img/avatar.jpeg" alt="Vasileios Apostolidis-Afentoulis profile photo" />
+      <source srcset="./img/avatar.webp" type="image/webp">
+      <img 
+        src="./img/avatar.jpeg" 
+        alt="Vasileios Apostolidis-Afentoulis profile photo"
+        width="150"
+        height="150"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      />
     </div>
     <h1>Vasileios Apostolidis-Afentoulis CV</h1>
     <section>
@@ -219,7 +228,7 @@
     <p>Created by: <a href="https://github.com/ritaly" target="_blank" rel="noopener noreferrer" aria-label="Visit ritaly's website who is the creator of this template">@ritaly</a> / Customized by: <a href="https://github.com/vapoafe" target="_blank" rel="noopener noreferrer" aria-label="Visit vapoafe's website who customized the original template">@vapoafe</a> / 2018 - Present</p>
   </footer>
 
-  <script src="circuit-particles.js"></script>
-  <script src="app.js"></script>
+  <script src="circuit-particles.js" defer></script>
+  <script src="app.js" defer></script>
 </body>
 </html>
