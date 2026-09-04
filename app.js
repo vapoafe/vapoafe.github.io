@@ -157,7 +157,7 @@ var darkConfig = {
   interactivity: {
     detect_on: "window",
     events: {
-      onhover: { enable: true, mode: "probe" },
+      onhover: { enable: true, mode: "magnet" },
       onclick: { enable: true, mode: "pulse_burst" },
       resize: true
     },
@@ -194,20 +194,13 @@ function initCircuit(theme) {
 
 function updateThemeUI(theme) {
   var toggleBtn = document.getElementById("theme-toggle");
-  var themeText = document.getElementById("theme-text");
 
   if (theme === "dark") {
     document.body.classList.add("dark-mode");
     if (toggleBtn) toggleBtn.setAttribute("aria-label", "Switch to light mode");
-    if (themeText) {
-      themeText.textContent = "Light";
-    }
   } else {
     document.body.classList.remove("dark-mode");
     if (toggleBtn) toggleBtn.setAttribute("aria-label", "Switch to dark mode");
-    if (themeText) {
-      themeText.textContent = "Dark";
-    }
   }
 }
 
@@ -301,16 +294,15 @@ var translations = {
     pub1_inst: str_ihu_diie,
     posLabel: "Position:",
     footerText: 'Created by: <a href="https://github.com/ritaly" target="_blank" rel="noopener noreferrer" aria-label="Visit ritaly\'s website who is the creator of this template">@ritaly</a> / Customized by: <a href="https://github.com/vapoafe" target="_blank" rel="noopener noreferrer" aria-label="Visit vapoafe\'s website who customized the original template">@vapoafe</a> / 2018 - Present',
-    btnLabel: "ΕΛ",
     btnFlagSrc: "./img/gr.svg",
     btnFlagAlt: "Greek Flag",
     btnAria: "Μετάβαση στα Ελληνικά",
     btnTitle: "Switch language to Greek / Μετάβαση στα Ελληνικά"
   },
   el: {
-    pageTitle: "Βιογραφικό Σημείωμα Βασιλείου Αποστολίδη-Αφεντούλη",
+    pageTitle: "Βιογραφικό Βασιλείου Αποστολίδη-Αφεντούλη",
     pageDesc: "Ακαδημαϊκό και επαγγελματικό βιογραφικό σημείωμα του Βασιλείου Αποστολίδη-Αφεντούλη",
-    headerTitle: "Βιογραφικό Σημείωμα Βασιλείου Αποστολίδη-Αφεντούλη",
+    headerTitle: "Βιογραφικό Βασιλείου Αποστολίδη-Αφεντούλη",
     headerBio: "Είμαι ο Βασίλειος Αποστολίδης-Αφεντούλης, ανεξάρτητος ακαδημαϊκός ερευνητής και εκπαιδευτικός ηλεκτρονικών δευτεροβάθμιας εκπαίδευσης.",
     skillsTitle: "Δεξιότητες",
     skillsExpHeading: "Εμπειρία σε",
@@ -360,7 +352,6 @@ var translations = {
     pub1_inst: str_ihu_diie_el,
     posLabel: "Θέση:",
     footerText: 'Δημιουργήθηκε από: <a href="https://github.com/ritaly" target="_blank" rel="noopener noreferrer" aria-label="Επισκεφτείτε την ιστοσελίδα της ritaly">@ritaly</a> / Διαμορφώθηκε από: <a href="https://github.com/vapoafe" target="_blank" rel="noopener noreferrer" aria-label="Επισκεφτείτε την ιστοσελίδα του vapoafe">@vapoafe</a> / 2018 - Σήμερα',
-    btnLabel: "EN",
     btnFlagSrc: "./img/uk.svg",
     btnFlagAlt: "United Kingdom Flag",
     btnAria: "Switch language to English",
@@ -379,16 +370,13 @@ function updateLanguageUI(lang) {
 
   // Update button
   var langBtn = document.getElementById("lang-toggle");
-  var langText = document.getElementById("lang-text");
   var langFlag = document.getElementById("lang-flag-img");
 
   if (langBtn) {
     langBtn.setAttribute("aria-label", t.btnAria);
     langBtn.setAttribute("title", t.btnTitle);
   }
-  if (langText) {
-    langText.textContent = t.btnLabel;
-  }
+
   if (langFlag) {
     langFlag.src = t.btnFlagSrc;
     langFlag.alt = t.btnFlagAlt;

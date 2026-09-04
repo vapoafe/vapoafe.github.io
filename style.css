@@ -102,6 +102,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-direction: column-reverse;
 }
 
 /* Button styling for Theme and Language */
@@ -109,7 +110,6 @@ body {
 .lang-toggle-btn {
   display: flex;
   align-items: center;
-  gap: 8px;
   background: rgba(1, 33, 105, 0.85);
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.3);
