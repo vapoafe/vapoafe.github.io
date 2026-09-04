@@ -1,4 +1,3 @@
-
 /* --------------------------------------------------------------------------------------------------------
 /* CircuitParticles.js v1.0.0 by Vasileios Apostolidis-Afentoulis.
 /* Lightweight, Electronic Circuit & PCB Animation Library.
