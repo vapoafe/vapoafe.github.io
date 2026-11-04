@@ -33,66 +33,73 @@ var COURSE_CATEGORIES = {
   }
 };
 
-// Default list of PDF files located in files/ folder
-var DEFAULT_PDF_FILES = [
-  {
-    fileName: "Circuit_Analysis_Ch03_Ohm_Kirchhoff_Thevenin.pdf",
-    category: "ilektrotechnia"
-  },
-  {
-    fileName: "Electronics_I_Ch01_Semiconductors_Diodes.pdf",
-    category: "anlog-psif"
-  },
-  {
-    fileName: "Digital_Systems_Ch02_Logic_Gates_Boolean_Algebra.pdf",
-    category: "anlog-psif"
-  },
-  {
-    fileName: "Microcontrollers_Lab01_Arduino_ESP32_GPIO.pdf",
-    category: "anlog-psif"
-  },
-  {
-    fileName: "Computer_Networks_Ch01_OSI_TCP_IP_Architecture.pdf",
-    category: "diktya-ypologistes"
-  },
-  {
-    fileName: "Telecommunications_Ch01_Modulation_AM_FM_Digital.pdf",
-    category: "diktya-ypologistes"
-  },
-  {
-    fileName: "Sensors_IoT_Lab02_ADC_Transducers_Interfacing.pdf",
-    category: "arch-ilektro"
-  },
-  {
-    fileName: "EPAL_Electronics_Curriculum_Syllabus_2026.pdf",
-    category: "arch-ilektro"
-  }
-];
-
-// Active materials array
-var studyMaterialsList = DEFAULT_PDF_FILES.slice();
+// No dummy or default files - starts strictly empty and is populated from files/ folder
+var detectedFilesList = [];
 var activeCategory = "all";
 var currentLang = "el"; // Default to Greek as requested
+var isLoadingFiles = true;
 
-// Helper: infer course category automatically from filename if not specified
-function inferCategoryFromFilename(fileName) {
-  var lower = fileName.toLowerCase();
-  if (lower.indexOf("circuit") !== -1 || lower.indexOf("ohm") !== -1 || lower.indexOf("kirchhoff") !== -1 || lower.indexOf("thevenin") !== -1 || lower.indexOf("kyklwm") !== -1 || lower.indexOf("κυκλωμ") !== -1 || lower.indexOf("ηλεκτροτεχν") !== -1) {
+// Infer course category automatically from the filename itself
+function inferCourseTagFromFilename(fileName) {
+  var name = (fileName || "").toLowerCase();
+
+  // 1. Ηλεκτροτεχνία (Κυκλώματα Συνεχούς και Εναλλασσόμενου Ρεύματος)
+  if (
+    name.indexOf("circuit") !== -1 ||
+    name.indexOf("ohm") !== -1 ||
+    name.indexOf("kirchhoff") !== -1 ||
+    name.indexOf("thevenin") !== -1 ||
+    name.indexOf("norton") !== -1 ||
+    name.indexOf("κυκλωμ") !== -1 ||
+    name.indexOf("ηλεκτροτεχν") !== -1 ||
+    name.indexOf("ρευμα") !== -1 ||
+    name.indexOf("dc") !== -1 ||
+    name.indexOf("ac") !== -1
+  ) {
     return "ilektrotechnia";
   }
-  if (lower.indexOf("network") !== -1 || lower.indexOf("osi") !== -1 || lower.indexOf("tcp") !== -1 || lower.indexOf("ip") !== -1 || lower.indexOf("telecom") !== -1 || lower.indexOf("δικτυ") !== -1 || lower.indexOf("συντηρησ") !== -1) {
+
+  // 2. Εγκατάσταση και Διαχείριση Δικτύων – Συντήρηση Υπολογιστικών Συστημάτων
+  if (
+    name.indexOf("network") !== -1 ||
+    name.indexOf("telecom") !== -1 ||
+    name.indexOf("osi") !== -1 ||
+    name.indexOf("tcp") !== -1 ||
+    name.indexOf("ip") !== -1 ||
+    name.indexOf("subnet") !== -1 ||
+    name.indexOf("δικτυ") !== -1 ||
+    name.indexOf("συντηρησ") !== -1 ||
+    name.indexOf("υπολογιστ") !== -1 ||
+    name.indexOf("τηλεπικοινων") !== -1
+  ) {
     return "diktya-ypologistes";
   }
-  if (lower.indexOf("electronic") !== -1 || lower.indexOf("digital") !== -1 || lower.indexOf("gate") !== -1 || lower.indexOf("microcontroller") !== -1 || lower.indexOf("arduino") !== -1 || lower.indexOf("esp32") !== -1 || lower.indexOf("gpio") !== -1 || lower.indexOf("ψηφιακ") !== -1 || lower.indexOf("ηλεκτρονικ") !== -1) {
+
+  // 3. Αναλογικά και Ψηφιακά Ηλεκτρονικά
+  if (
+    name.indexOf("digital") !== -1 ||
+    name.indexOf("logic") !== -1 ||
+    name.indexOf("gate") !== -1 ||
+    name.indexOf("boolean") !== -1 ||
+    name.indexOf("semiconductor") !== -1 ||
+    name.indexOf("diode") !== -1 ||
+    name.indexOf("transistor") !== -1 ||
+    name.indexOf("microcontroller") !== -1 ||
+    name.indexOf("arduino") !== -1 ||
+    name.indexOf("esp32") !== -1 ||
+    name.indexOf("gpio") !== -1 ||
+    name.indexOf("ψηφιακ") !== -1 ||
+    name.indexOf("ηλεκτρονικ") !== -1 ||
+    name.indexOf("μικροελεγκτ") !== -1
+  ) {
     return "anlog-psif";
   }
-  if (lower.indexOf("sensor") !== -1 || lower.indexOf("iot") !== -1 || lower.indexOf("transducer") !== -1 || lower.indexOf("curriculum") !== -1 || lower.indexOf("syllabus") !== -1 || lower.indexOf("αρχες") !== -1 || lower.indexOf("αισθητηρ") !== -1) {
-    return "arch-ilektro";
-  }
+
+  // 4. Αρχές Ηλεκτρολογίας και Ηλεκτρονικής
   return "arch-ilektro";
 }
 
-// Helper: generate clean readable title from filename
+// Generate clean title acquired directly from the file's name
 function getTitleFromFilename(fileName) {
   if (!fileName) return "";
   return fileName
@@ -120,17 +127,28 @@ function renderStudyCards() {
   var downloadLabel = lang === "el" ? "Λήψη PDF" : "Download PDF";
 
   container.innerHTML = "";
+
+  if (isLoadingFiles) {
+    container.innerHTML = '<div style="text-align: center; padding: 30px; color: var(--muted-text);">' +
+      (lang === "el" ? "Εντοπισμός αρχείων από το φάκελο files..." : "Detecting files from files folder...") +
+      '</div>';
+    return;
+  }
+
   var visibleCount = 0;
 
-  studyMaterialsList.forEach(function (item) {
-    var categoryId = item.category || inferCategoryFromFilename(item.fileName);
+  detectedFilesList.forEach(function (fileObj) {
+    var fileName = typeof fileObj === "string" ? fileObj : (fileObj.fileName || fileObj.name);
+    if (!fileName || !fileName.toLowerCase().endsWith(".pdf")) return;
+
+    var categoryId = fileObj.category || inferCourseTagFromFilename(fileName);
     var matchesCat = (activeCategory === "all" || categoryId === activeCategory);
 
-    var title = getTitleFromFilename(item.fileName);
+    var title = getTitleFromFilename(fileName);
     var catInfo = COURSE_CATEGORIES[categoryId] || COURSE_CATEGORIES["arch-ilektro"];
     var catLabel = lang === "el" ? catInfo.el : catInfo.en;
 
-    var searchableText = (title + " " + item.fileName + " " + catLabel).toLowerCase();
+    var searchableText = (title + " " + fileName + " " + catLabel).toLowerCase();
     var matchesSearch = (query === "" || searchableText.indexOf(query) !== -1);
 
     if (matchesCat && matchesSearch) {
@@ -150,7 +168,7 @@ function renderStudyCards() {
             '<h3 class="pdf-card-title">' + title + '</h3>' +
           '</div>' +
         '</div>' +
-        '<a href="' + basePath + item.fileName + '" download="' + item.fileName + '" class="pdf-download-btn" aria-label="' + downloadLabel + ' ' + title + '">' +
+        '<a href="' + basePath + fileName + '" download="' + fileName + '" class="pdf-download-btn" aria-label="' + downloadLabel + ' ' + title + '">' +
           '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">' +
             '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>' +
             '<polyline points="7 10 12 15 17 10"/>' +
@@ -165,8 +183,74 @@ function renderStudyCards() {
 
   var noResultsMsg = document.getElementById("no-results-msg");
   if (noResultsMsg) {
-    noResultsMsg.style.display = (visibleCount === 0) ? "block" : "none";
+    noResultsMsg.style.display = (visibleCount === 0 && !isLoadingFiles) ? "block" : "none";
   }
+}
+
+// Automatically detect files from the files/ folder
+function detectFilesFromFolder() {
+  isLoadingFiles = true;
+  renderStudyCards();
+
+  var basePath = getFilesBasePath();
+
+  // 1. First try files/files.json (generated from the folder)
+  fetch(basePath + "files.json?t=" + Date.now())
+    .then(function (res) {
+      if (res.ok) return res.json();
+      throw new Error("No files.json");
+    })
+    .then(function (data) {
+      if (Array.isArray(data)) {
+        detectedFilesList = data;
+        isLoadingFiles = false;
+        renderStudyCards();
+        return;
+      }
+      throw new Error("Invalid files.json format");
+    })
+    .catch(function () {
+      // 2. Try /api/files endpoint (if running on Node/Vite server)
+      return fetch("/api/files")
+        .then(function (res) {
+          if (res.ok) return res.json();
+          throw new Error("No /api/files endpoint");
+        })
+        .then(function (data) {
+          if (Array.isArray(data)) {
+            detectedFilesList = data;
+            isLoadingFiles = false;
+            renderStudyCards();
+            return;
+          }
+          throw new Error("Invalid /api/files response");
+        })
+        .catch(function () {
+          // 3. Fallback for live GitHub Pages: query GitHub Contents API directly for the files folder
+          var repoApi = "https://api.github.com/repos/vapoafe/vapoafe.github.io/contents/files";
+          return fetch(repoApi)
+            .then(function (res) {
+              if (res.ok) return res.json();
+              throw new Error("GitHub API unavailable");
+            })
+            .then(function (items) {
+              if (Array.isArray(items)) {
+                var pdfs = items
+                  .filter(function (it) { return it.name && it.name.toLowerCase().endsWith(".pdf"); })
+                  .map(function (it) { return { fileName: it.name }; });
+                detectedFilesList = pdfs;
+              }
+              isLoadingFiles = false;
+              renderStudyCards();
+            })
+            .catch(function () {
+              // No files detected
+              detectedFilesList = [];
+              isLoadingFiles = false;
+              renderStudyCards();
+            });
+        });
+    });
 }
 
 // Translations dictionary
@@ -394,21 +478,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Try to load dynamic manifest if available in files/materials.json
-  var basePath = getFilesBasePath();
-  fetch(basePath + "materials.json")
-    .then(function (res) {
-      if (res.ok) return res.json();
-      throw new Error("No materials.json");
-    })
-    .then(function (data) {
-      if (Array.isArray(data) && data.length > 0) {
-        studyMaterialsList = data;
-        renderStudyCards();
-      }
-    })
-    .catch(function () {
-      // Keep default materials list
-      renderStudyCards();
-    });
+  // Auto-detect files dynamically from files folder
+  detectFilesFromFolder();
 });
