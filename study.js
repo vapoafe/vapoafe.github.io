@@ -83,8 +83,8 @@ function getTitleFromFilename(fileName) {
   if (!fileName) return "";
   return fileName
     .replace(/\.[^/.]+$/, "") // strip .pdf extension
-    .replace(/[_-]+/g, " ")   // replace underscores/hyphens with spaces
-    .replace(/\s+/g, " ")
+    //.replace(/[_-]+/g, " ")   // replace underscores/hyphens with spaces
+    .replace(/\s+/g, " ")     // collapse multiple consecutive spaces into a single space
     .trim();
 }
 
@@ -144,7 +144,7 @@ function renderStudyCards() {
           '</div>' +
           '<div class="pdf-card-info">' +
             '<span class="pdf-course-tag">' + catLabel + '</span>' +
-            '<h3 class="pdf-card-title">' + title + '</h3>' +
+            '<h4 class="pdf-card-title">' + title + '</h4>' +
           '</div>' +
         '</div>' +
         '<a href="' + basePath + fileName + '" download="' + fileName + '" class="pdf-download-btn" aria-label="' + downloadLabel + ' ' + title + '">' +
@@ -290,7 +290,6 @@ function updateStudyLanguageUI(lang) {
   if (metaDesc) metaDesc.setAttribute("content", t.pageDesc);
 
   var langBtn = document.getElementById("lang-toggle");
-  var langText = document.getElementById("lang-text");
   var langFlag = document.getElementById("lang-flag-img");
   if (langBtn) {
     langBtn.setAttribute("aria-label", t.btnAria);
