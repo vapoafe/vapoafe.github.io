@@ -51,7 +51,7 @@ function inferCourseTagFromFilename(fileName) {
     name.indexOf("thevenin") !== -1 ||
     name.indexOf("norton") !== -1 ||
     name.indexOf("κυκλωμ") !== -1 ||
-    name.indexOf("ηλεκτροτεχν") !== -1 ||
+    name.indexOf("Ηλεκτροτεχνία") !== -1 ||
     name.indexOf("ρευμα") !== -1 ||
     name.indexOf("dc") !== -1 ||
     name.indexOf("ac") !== -1
@@ -88,9 +88,9 @@ function inferCourseTagFromFilename(fileName) {
     name.indexOf("arduino") !== -1 ||
     name.indexOf("esp32") !== -1 ||
     name.indexOf("gpio") !== -1 ||
-    name.indexOf("ψηφιακ") !== -1 ||
-    name.indexOf("ηλεκτρονικ") !== -1 ||
-    name.indexOf("μικροελεγκτ") !== -1
+    name.indexOf("Ψηφιακά") !== -1 ||
+    name.indexOf("Ηλεκτρονικά") !== -1 ||
+    name.indexOf("Αναλογικά") !== -1
   ) {
     return "anlog-psif";
   }
@@ -256,11 +256,11 @@ function detectFilesFromFolder() {
 // Translations dictionary
 var studyTranslations = {
   en: {
-    pageTitle: "Study & Course Materials - Vasileios Apostolidis-Afentoulis",
+    pageTitle: "Study Materials - Vasileios Apostolidis-Afentoulis",
     pageDesc: "Download class PDF files by Vasileios Apostolidis-Afentoulis.",
     backToCv: "← Back to CV",
-    studyHeaderTitle: "Study & Class Materials",
-    studyHeaderBio: "1st Vocational High School of Kalamaria · Electronics Engineering",
+    studyHeaderTitle: "Study Materials",
+    studyHeaderBio: "Vocational High School | Sector of Electrical Engineering and Electronics",
     studyHeaderDesc: "Select a course tag or click the download button for any PDF file.",
     searchPlaceholder: "Search file or course...",
     catAll: "All",
@@ -278,11 +278,11 @@ var studyTranslations = {
     noResults: "No files found matching your search."
   },
   el: {
-    pageTitle: "Εκπαιδευτικό Υλικό & Σημειώσεις - Βασίλειος Αποστολίδης-Αφεντούλης",
+    pageTitle: "Εκπαιδευτικό Υλικό - Βασίλειος Αποστολίδης-Αφεντούλης",
     pageDesc: "Λήψη αρχείων PDF μαθημάτων από τον Βασίλειο Αποστολίδη-Αφεντούλη.",
     backToCv: "← Επιστροφή στο Βιογραφικό",
-    studyHeaderTitle: "Εκπαιδευτικό Υλικό & Σημειώσεις Μαθημάτων",
-    studyHeaderBio: "1ο Επαγγελματικό Λύκειο Καλαμαριάς · Τομέας Ηλεκτρολογίας & Ηλεκτρονικής",
+    studyHeaderTitle: "Εκπαιδευτικό Υλικό",
+    studyHeaderBio: "Επαγγελματικό Λύκειο | Τομέας Ηλεκτρολογίας & Ηλεκτρονικής",
     studyHeaderDesc: "Επιλέξτε ετικέτα μαθήματος ή πατήστε απευθείας στο κουμπί λήψης για αποθήκευση οποιουδήποτε αρχείου PDF.",
     searchPlaceholder: "Αναζήτηση αρχείου ή μαθήματος...",
     catAll: "Όλα",
