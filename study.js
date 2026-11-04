@@ -295,7 +295,6 @@ function updateStudyLanguageUI(lang) {
     langBtn.setAttribute("aria-label", t.btnAria);
     langBtn.setAttribute("title", t.btnTitle);
   }
-  if (langText) langText.textContent = t.btnLabel;
   if (langFlag) {
     var prefix = (window.location.pathname.indexOf("/study/") !== -1) ? "../" : "";
     langFlag.src = prefix + t.btnFlagSrc;
