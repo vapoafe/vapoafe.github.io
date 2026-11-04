@@ -45,7 +45,7 @@ function inferCourseTagFromFilename(fileName) {
 
   // 1. Ηλεκτροτεχνία (Κυκλώματα Συνεχούς και Εναλλασσόμενου Ρεύματος)
   if (
-    name.indexOf("Ηλεκτροτεχνία") !== -1 ||
+    name.indexOf("ηλεκτροτεχνία") !== -1 ||
     name.indexOf("ρευμα") !== -1
   ) {
     return "ilektrotechnia";
@@ -53,26 +53,26 @@ function inferCourseTagFromFilename(fileName) {
 
   // 2. Εγκατάσταση και Διαχείριση Δικτύων – Συντήρηση Υπολογιστικών Συστημάτων
   if (
-    name.indexOf("Υπολογιστικά") !== -1 ||
-    name.indexOf("Συστήματα") !== -1
+    name.indexOf("υπολογιστικά") !== -1 ||
+    name.indexOf("συστήματα") !== -1
   ) {
     return "diktya-ypologistes";
   }
 
   // 3. Αναλογικά και Ψηφιακά Ηλεκτρονικά
   if (
-    name.indexOf("Αναλογικά") !== -1 ||
-    name.indexOf("Ψηφιακά") !== -1 ||
-    name.indexOf("Ηλεκτρονικά") !== -1
+    name.indexOf("αναλογικά") !== -1 ||
+    name.indexOf("ψηφιακά") !== -1 ||
+    name.indexOf("ηλεκτρονικά") !== -1
   ) {
     return "anlog-psif";
   }
 
   // 4. Αρχές Ηλεκτρολογίας και Ηλεκτρονικής
   if (
-    name.indexOf("Αρχές") !== -1 ||
-    name.indexOf("Ηλεκτρολογίας") !== -1 ||
-    name.indexOf("Ηλεκτρονικής") !== -1
+    name.indexOf("αρχές") !== -1 ||
+    name.indexOf("ηλεκτρολογίας") !== -1 ||
+    name.indexOf("ηλεκτρονικής") !== -1
   ) {
     return "arch-ilektro";
   }
