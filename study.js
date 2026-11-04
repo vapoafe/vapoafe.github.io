@@ -4,7 +4,7 @@
  * Customized by Vasileios Apostolidis-Afentoulis
  * ------------------------------------------------------------- */
 
-// Course categories (4 official courses + All)
+// Course categories (+ All)
 var COURSE_CATEGORIES = {
   "all": {
     id: "all",
@@ -45,58 +45,37 @@ function inferCourseTagFromFilename(fileName) {
 
   // 1. Ηλεκτροτεχνία (Κυκλώματα Συνεχούς και Εναλλασσόμενου Ρεύματος)
   if (
-    name.indexOf("circuit") !== -1 ||
-    name.indexOf("ohm") !== -1 ||
-    name.indexOf("kirchhoff") !== -1 ||
-    name.indexOf("thevenin") !== -1 ||
-    name.indexOf("norton") !== -1 ||
-    name.indexOf("κυκλωμ") !== -1 ||
     name.indexOf("Ηλεκτροτεχνία") !== -1 ||
-    name.indexOf("ρευμα") !== -1 ||
-    name.indexOf("dc") !== -1 ||
-    name.indexOf("ac") !== -1
+    name.indexOf("ρευμα") !== -1
   ) {
     return "ilektrotechnia";
   }
 
   // 2. Εγκατάσταση και Διαχείριση Δικτύων – Συντήρηση Υπολογιστικών Συστημάτων
   if (
-    name.indexOf("network") !== -1 ||
-    name.indexOf("telecom") !== -1 ||
-    name.indexOf("osi") !== -1 ||
-    name.indexOf("tcp") !== -1 ||
-    name.indexOf("ip") !== -1 ||
-    name.indexOf("subnet") !== -1 ||
-    name.indexOf("δικτυ") !== -1 ||
-    name.indexOf("συντηρησ") !== -1 ||
-    name.indexOf("υπολογιστ") !== -1 ||
-    name.indexOf("τηλεπικοινων") !== -1
+    name.indexOf("Υπολογιστικά") !== -1 ||
+    name.indexOf("Συστήματα") !== -1
   ) {
     return "diktya-ypologistes";
   }
 
   // 3. Αναλογικά και Ψηφιακά Ηλεκτρονικά
   if (
-    name.indexOf("digital") !== -1 ||
-    name.indexOf("logic") !== -1 ||
-    name.indexOf("gate") !== -1 ||
-    name.indexOf("boolean") !== -1 ||
-    name.indexOf("semiconductor") !== -1 ||
-    name.indexOf("diode") !== -1 ||
-    name.indexOf("transistor") !== -1 ||
-    name.indexOf("microcontroller") !== -1 ||
-    name.indexOf("arduino") !== -1 ||
-    name.indexOf("esp32") !== -1 ||
-    name.indexOf("gpio") !== -1 ||
+    name.indexOf("Αναλογικά") !== -1 ||
     name.indexOf("Ψηφιακά") !== -1 ||
-    name.indexOf("Ηλεκτρονικά") !== -1 ||
-    name.indexOf("Αναλογικά") !== -1
+    name.indexOf("Ηλεκτρονικά") !== -1
   ) {
     return "anlog-psif";
   }
 
   // 4. Αρχές Ηλεκτρολογίας και Ηλεκτρονικής
-  return "arch-ilektro";
+  if (
+    name.indexOf("Αρχές") !== -1 ||
+    name.indexOf("Ηλεκτρολογίας") !== -1 ||
+    name.indexOf("Ηλεκτρονικής") !== -1
+  ) {
+    return "arch-ilektro";
+  }
 }
 
 // Generate clean title acquired directly from the file's name
