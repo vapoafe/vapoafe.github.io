@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Εκπαιδευτικό Υλικό - Βασίλειος Αποστολίδης-Αφεντούλης</title>
+  <meta name="description" content="Λήψη αρχείων PDF μαθημάτων από τον Βασίλειο Αποστολίδη-Αφεντούλη.">
+  <meta name="author" content="Vasileios Apostolidis-Afentoulis">
+  <meta property="og:title" content="Εκπαιδευτικό Υλικό & Σημειώσεις - Βασίλειος Αποστολίδης-Αφεντούλης" />
+  <meta property="og:description" content="Λήψη αρχείων PDF μαθημάτων από τον Βασίλειο Αποστολίδη-Αφεντούλη." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="./img/favicon.ico?v=2">
+  <link rel="preload" href="./fonts/Comfortaa-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="particles-js"></div>
+  
+  <!-- Floating Controls: Language & Theme -->
+  <div class="theme-toggle-container">
+    <button id="lang-toggle" class="lang-toggle-btn" aria-label="Switch language to English" title="Switch language to English / Αλλαγή σε Αγγλικά">
+      <img src="./img/uk.svg" alt="United Kingdom Flag" id="lang-flag-img" class="lang-flag-icon">
+      <span id="lang-text">EN</span>
+    </button>
+    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Switch to dark mode" title="Toggle Light/Dark mode">
+      <img src="./img/moon.svg" alt="moon icon" id="moon-icon" class="theme-icon-img">
+      <img src="./img/sun.svg" alt="sun icon" id="sun-icon" class="theme-icon-img">
+    </button>
+  </div>
+
+  <header>
+    <div>
+      <a href="cv.html" class="study-back-link" data-i18n="backToCv">← Επιστροφή στο Βιογραφικό</a>
+    </div>
+    <div>
+      <picture>
+        <source srcset="./img/avatar.webp" type="image/webp">
+        <img 
+          src="./img/avatar.jpeg" 
+          alt="Vasileios Apostolidis-Afentoulis profile photo" 
+          width="150" 
+          height="150" 
+          loading="eager" 
+          fetchpriority="high" 
+          decoding="async" 
+        />
+      </picture>
+    </div>
+    <h1 data-i18n="studyHeaderTitle">Εκπαιδευτικό Υλικό</h1>
+    <section>
+      <p data-i18n="studyHeaderBio" style="font-weight: 700; margin-bottom: 6px;">Επαγγελματικό Λύκειο· Τομέας Ηλεκτρολογίας & Ηλεκτρονικής</p>
+      <p data-i18n="studyHeaderDesc">Επιλέξτε ετικέτα μαθήματος ή πατήστε απευθείας στο κουμπί λήψης για αποθήκευση οποιουδήποτε αρχείου PDF.</p>
+      <div style="margin-top: 15px;">
+        <a href="https://github.com/vapoafe" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+          <img src="./img/github.svg" alt="Github icon" class="github-icon" style="margin-right: 12px;">
+        </a>
+        <a href="https://orcid.org/0000-0002-4147-7011" target="_blank" rel="noopener noreferrer" aria-label="ORCID profile">
+          <img src="./img/orcid.svg" alt="ORCID icon" class="orcid-icon" style="margin-right: 12px;">
+        </a>
+        <a href="study.html" aria-label="Current page: Study" title="Study & Course Materials / Εκπαιδευτικό Υλικό">
+          <img src="./img/study.svg" alt="Study icon" class="study-icon" style="box-shadow: 0 0 10px #FFC20A; border-radius: 50%;">
+        </a>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section>
+      <!-- Search Bar -->
+      <input 
+        type="text" 
+        id="study-search" 
+        class="study-search-bar" 
+        placeholder="Αναζήτηση αρχείου ή μαθήματος..." 
+        aria-label="Αναζήτηση αρχείων"
+      />
+
+      <!-- Category Filter Tabs (4 Course Tags + All) -->
+      <div class="study-categories" role="tablist" aria-label="Ετικέτες Μαθημάτων">
+        <button class="study-category-btn active" data-cat="all" data-i18n="catAll">Όλα</button>
+        <button class="study-category-btn" data-cat="arch-ilektro" data-i18n="catArchIlektro">Αρχές Ηλεκτρολογίας και Ηλεκτρονικής</button>
+        <button class="study-category-btn" data-cat="ilektrotechnia" data-i18n="catIlektrotechnia">Ηλεκτροτεχνία (Κυκλώματα Συνεχούς και Εναλλασσόμενου Ρεύματος)</button>
+        <button class="study-category-btn" data-cat="anlog-psif" data-i18n="catAnlogPsif">Αναλογικά και Ψηφιακά Ηλεκτρονικά</button>
+        <button class="study-category-btn" data-cat="diktya-ypologistes" data-i18n="catDiktyaYpologistes">Εγκατάσταση και Διαχείριση Δικτύων – Συντήρηση Υπολογιστικών Συστημάτων</button>
+      </div>
+
+      <!-- PDF Card List: Rendered automatically by study.js with file names and tags -->
+      <div class="pdf-list" id="pdf-container"></div>
+
+      <!-- No Results Message -->
+      <div id="no-results-msg" style="display: none; text-align: center; padding: 40px 20px; color: var(--muted-text);" data-i18n="noResults">
+        Δεν βρέθηκε αρχείο που να ταιριάζει στην αναζήτησή σας.
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p data-i18n="footerText" data-i18n-html="true">Δημιουργήθηκε από: <a href="https://github.com/ritaly" target="_blank" rel="noopener noreferrer">@ritaly</a> / Διαμορφώθηκε από: <a href="https://github.com/vapoafe" target="_blank" rel="noopener noreferrer">@vapoafe</a> / 2018 - Σήμερα</p>
+  </footer>
+
+  <script src="circuit-particles.js" defer></script>
+  <script src="study.js" defer></script>
+</body>
+</html>

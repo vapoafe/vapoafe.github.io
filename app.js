@@ -293,6 +293,8 @@ var translations = {
     pub2_inst: str_uom_dai,
     pub1_inst: str_ihu_diie,
     posLabel: "Position:",
+    studyLinkTitle: "Study & Course Materials / Educational Files",
+    studyLinkAria: "Study and Course Materials",
     footerText: 'Created by: <a href="https://github.com/ritaly" target="_blank" rel="noopener noreferrer" aria-label="Visit ritaly\'s website who is the creator of this template">@ritaly</a> / Customized by: <a href="https://github.com/vapoafe" target="_blank" rel="noopener noreferrer" aria-label="Visit vapoafe\'s website who customized the original template">@vapoafe</a> / 2018 - Present',
     btnFlagSrc: "./img/gr.svg",
     btnFlagAlt: "Greek Flag",
@@ -351,6 +353,8 @@ var translations = {
     pub2_inst: str_uom_dai_el,
     pub1_inst: str_ihu_diie_el,
     posLabel: "Θέση:",
+    studyLinkTitle: "Εκπαιδευτικό Υλικό & Σημειώσεις / Study",
+    studyLinkAria: "Εκπαιδευτικό Υλικό και Σημειώσεις",
     footerText: 'Δημιουργήθηκε από: <a href="https://github.com/ritaly" target="_blank" rel="noopener noreferrer" aria-label="Επισκεφτείτε την ιστοσελίδα της ritaly">@ritaly</a> / Διαμορφώθηκε από: <a href="https://github.com/vapoafe" target="_blank" rel="noopener noreferrer" aria-label="Επισκεφτείτε την ιστοσελίδα του vapoafe">@vapoafe</a> / 2018 - Σήμερα',
     btnFlagSrc: "./img/uk.svg",
     btnFlagAlt: "United Kingdom Flag",
@@ -380,6 +384,13 @@ function updateLanguageUI(lang) {
   if (langFlag) {
     langFlag.src = t.btnFlagSrc;
     langFlag.alt = t.btnFlagAlt;
+  }
+
+  // Update study icon tooltip
+  var studyLink = document.getElementById("study-link");
+  if (studyLink && t.studyLinkTitle) {
+    studyLink.setAttribute("title", t.studyLinkTitle);
+    studyLink.setAttribute("aria-label", t.studyLinkAria);
   }
 
   // Update elements with data-i18n attribute
