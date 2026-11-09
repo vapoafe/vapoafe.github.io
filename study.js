@@ -1,7 +1,7 @@
 /* -------------------------------------------------------------
- * Study Subpage Logic & Dynamic PDF Rendering
+ * Study Subpage Logic & Automated File Detection
  * Pure HTML, CSS, and JavaScript
- * Customized by Vasileios Apostolidis-Afentoulis
+ * by Vasileios Apostolidis-Afentoulis
  * ------------------------------------------------------------- */
 
 // Course categories (+ All)
@@ -46,7 +46,7 @@ function inferCourseTagFromFilename(fileName) {
   // 1. Ηλεκτροτεχνία (Κυκλώματα Συνεχούς και Εναλλασσόμενου Ρεύματος)
   if (
     name.indexOf("ηλεκτροτεχνία") !== -1 ||
-    name.indexOf("ρευμα") !== -1
+    name.indexOf("ρεύμα") !== -1
   ) {
     return "ilektrotechnia";
   }
@@ -93,7 +93,7 @@ function getFilesBasePath() {
   return "files/";
 }
 
-// Render all PDF cards automatically into #pdf-container
+// Render detected files list automatically
 function renderStudyCards() {
   var container = document.getElementById("pdf-container");
   if (!container) return;
@@ -442,16 +442,39 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Category filter buttons
+  // Category filter tabs (Accessible ARIA tabs)
   var categoryBtns = document.querySelectorAll(".study-category-btn");
+  var pdfPanel = document.getElementById("pdf-container");
+
   for (var i = 0; i < categoryBtns.length; i++) {
     categoryBtns[i].addEventListener("click", function () {
       for (var j = 0; j < categoryBtns.length; j++) {
         categoryBtns[j].classList.remove("active");
+        categoryBtns[j].setAttribute("aria-selected", "false");
       }
       this.classList.add("active");
+      this.setAttribute("aria-selected", "true");
+      if (pdfPanel && this.id) {
+        pdfPanel.setAttribute("aria-labelledby", this.id);
+      }
       activeCategory = this.getAttribute("data-cat") || "all";
       renderStudyCards();
+    });
+
+    categoryBtns[i].addEventListener("keydown", function (e) {
+      var btnArray = Array.prototype.slice.call(categoryBtns);
+      var idx = btnArray.indexOf(this);
+      var target = null;
+      if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+        target = btnArray[(idx + 1) % btnArray.length];
+      } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+        target = btnArray[(idx - 1 + btnArray.length) % btnArray.length];
+      }
+      if (target) {
+        e.preventDefault();
+        target.focus();
+        target.click();
+      }
     });
   }
 
