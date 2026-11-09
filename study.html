@@ -78,15 +78,15 @@
 
       <!-- Category Filter Tabs (4 Course Tags + All) -->
       <div class="study-categories" role="tablist" aria-label="Ετικέτες Μαθημάτων">
-        <button class="study-category-btn active" data-cat="all" data-i18n="catAll">Όλα</button>
-        <button class="study-category-btn" data-cat="arch-ilektro" data-i18n="catArchIlektro">Αρχές Ηλεκτρολογίας και Ηλεκτρονικής</button>
-        <button class="study-category-btn" data-cat="ilektrotechnia" data-i18n="catIlektrotechnia">Ηλεκτροτεχνία (Κυκλώματα Συνεχούς και Εναλλασσόμενου Ρεύματος)</button>
-        <button class="study-category-btn" data-cat="anlog-psif" data-i18n="catAnlogPsif">Αναλογικά και Ψηφιακά Ηλεκτρονικά</button>
-        <button class="study-category-btn" data-cat="diktya-ypologistes" data-i18n="catDiktyaYpologistes">Εγκατάσταση και Διαχείριση Δικτύων – Συντήρηση Υπολογιστικών Συστημάτων</button>
+        <button class="study-category-btn active" role="tab" aria-selected="true" aria-controls="pdf-container" id="tab-all" data-cat="all" data-i18n="catAll">Όλα</button>
+        <button class="study-category-btn" role="tab" aria-selected="false" aria-controls="pdf-container" id="tab-arch-ilektro" data-cat="arch-ilektro" data-i18n="catArchIlektro">Αρχές Ηλεκτρολογίας και Ηλεκτρονικής</button>
+        <button class="study-category-btn" role="tab" aria-selected="false" aria-controls="pdf-container" id="tab-ilektrotechnia" data-cat="ilektrotechnia" data-i18n="catIlektrotechnia">Ηλεκτροτεχνία (Κυκλώματα Συνεχούς και Εναλλασσόμενου Ρεύματος)</button>
+        <button class="study-category-btn" role="tab" aria-selected="false" aria-controls="pdf-container" id="tab-anlog-psif" data-cat="anlog-psif" data-i18n="catAnlogPsif">Αναλογικά και Ψηφιακά Ηλεκτρονικά</button>
+        <button class="study-category-btn" role="tab" aria-selected="false" aria-controls="pdf-container" id="tab-diktya-ypologistes" data-cat="diktya-ypologistes" data-i18n="catDiktyaYpologistes">Εγκατάσταση και Διαχείριση Δικτύων – Συντήρηση Υπολογιστικών Συστημάτων</button>
       </div>
 
       <!-- PDF Card List: Rendered automatically by study.js with file names and tags -->
-      <div class="pdf-list" id="pdf-container"></div>
+      <div class="pdf-list" id="pdf-container" role="tabpanel" aria-labelledby="tab-all"></div>
 
       <!-- No Results Message -->
       <div id="no-results-msg" style="display: none; text-align: center; padding: 40px 20px; color: var(--muted-text);" data-i18n="noResults">
