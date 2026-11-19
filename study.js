@@ -26,6 +26,11 @@ var COURSE_CATEGORIES = {
     el: "Αναλογικά και Ψηφιακά Ηλεκτρονικά",
     en: "Analog and Digital Electronics"
   },
+  "vasiki-ilektrologia": {
+    id: "vasiki-ilektrologia",
+    el: "Βασική Ηλεκτρολογία και Εφαρμογές",
+    en: "Basic Electrical Engineering and Applications"
+  },
   "diktya-ypologistes": {
     id: "diktya-ypologistes",
     el: "Εγκατάσταση και Διαχείριση Δικτύων – Συντήρηση Υπολογιστικών Συστημάτων",
@@ -75,6 +80,15 @@ function inferCourseTagFromFilename(fileName) {
     name.indexOf("ηλεκτρονικής") !== -1
   ) {
     return "arch-ilektro";
+  }
+
+  // 5. Βασική Ηλεκτρολογία και Εφαρμογές
+  if (
+    name.indexOf("βασική") !== -1 ||
+    name.indexOf("ηλεκτρολογίας") !== -1 ||
+    name.indexOf("εφαρμογές") !== -1
+  ) {
+    return "vasiki-ilektrologia";
   }
 }
 
@@ -245,6 +259,7 @@ var studyTranslations = {
     catAll: "All",
     catArchIlektro: "Principles of Electrical & Electronic Engineering",
     catIlektrotechnia: "Electrical Engineering (DC & AC Circuits)",
+    catVasikiIlektrologia: "Basic Electrical Engineering and Applications",
     catAnlogPsif: "Analog and Digital Electronics",
     catDiktyaYpologistes: "Network Installation & Management – Computer Systems Maintenance",
     downloadPdf: "Download PDF",
@@ -267,6 +282,7 @@ var studyTranslations = {
     catAll: "Όλα",
     catArchIlektro: "Αρχές Ηλεκτρολογίας και Ηλεκτρονικής",
     catIlektrotechnia: "Ηλεκτροτεχνία (Κυκλώματα Συνεχούς και Εναλλασσόμενου Ρεύματος)",
+    catVasikiIlektrologia: "Βασική Ηλεκτρολογία και Εφαρμογές",
     catAnlogPsif: "Αναλογικά και Ψηφιακά Ηλεκτρονικά",
     catDiktyaYpologistes: "Εγκατάσταση και Διαχείριση Δικτύων – Συντήρηση Υπολογιστικών Συστημάτων",
     downloadPdf: "Λήψη PDF",
