@@ -58,8 +58,9 @@ function inferCourseTagFromFilename(fileName) {
 
   // 2. Εγκατάσταση και Διαχείριση Δικτύων – Συντήρηση Υπολογιστικών Συστημάτων
   if (
-    name.indexOf("υπολογιστικά") !== -1 ||
-    name.indexOf("συστήματα") !== -1
+    name.indexOf("εγκατάσταση") !== -1 ||
+    name.indexOf("διαχείριση") !== -1 ||
+    name.indexOf("δικτύων") !== -1
   ) {
     return "diktya-ypologistes";
   }
